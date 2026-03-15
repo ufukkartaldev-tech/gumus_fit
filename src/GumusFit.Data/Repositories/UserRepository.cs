@@ -1,6 +1,7 @@
 using GumusFit.Data.Contexts;
 using GumusFit.Domain.Entities;
 using GumusFit.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace GumusFit.Data.Repositories;
 
