@@ -1,3 +1,5 @@
+using GumusFit.Domain.Enums;
+
 namespace GumusFit.Domain.Entities;
 
 public class User
