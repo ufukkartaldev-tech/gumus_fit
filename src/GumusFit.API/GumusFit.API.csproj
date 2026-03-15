@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GumusFit.Data\GumusFit.Data.csproj" />
+    <ProjectReference Include="..\GumusFit.Application\GumusFit.Application.csproj" />
   </ItemGroup>
 
 </Project>
