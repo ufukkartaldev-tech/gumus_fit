@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using GumusFit.Data.Repositories;
+using GumusFit.Domain.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,10 @@ builder.Services.AddOpenApi();
 // Add DbContext
 builder.Services.AddDbContext<GumusFit.Data.Contexts.GumusFitDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Add Repositories
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICalorieRepository, CalorieRepository>();
 
 var app = builder.Build();
 
