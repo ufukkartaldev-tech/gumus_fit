@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using GumusFit.Data.Repositories;
 using GumusFit.Domain.Interfaces;
+using GumusFit.Application.Mappings;
+using GumusFit.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,10 @@ builder.Services.AddDbContext<GumusFit.Data.Contexts.GumusFitDbContext>(options 
 // Add Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICalorieRepository, CalorieRepository>();
+
+// Add Application Layer
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
