@@ -21,6 +21,7 @@ builder.Services.AddScoped<ICalorieRepository, CalorieRepository>();
 // Add Application Layer
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICalorieService, CalorieService>();
 
 var app = builder.Build();
 
